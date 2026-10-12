@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calendar - PartyPass</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        .calendar-container {
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .calendar-month {
+            background-color: #211b1a;
+            padding: 25px;
+            border-radius: 18px;
+            margin-bottom: 35px;
+            border: 1px solid #3b2924;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .month-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #c9a86a;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 7px;
+        }
+
+        .day-name {
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+            color: #c9a86a;
+        }
+
+        .day {
+            min-height: 75px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #171414;
+            border: 1px solid #3b2924;
+            color: #f5f0e8;
+        }
+
+        .empty {
+            background-color: transparent;
+            border: none;
+        }
+
+        .event-day {
+            background-color: #4a171f;
+            border: 1px solid #7d1f2a;
+            font-weight: bold;
+        }
+
+        .event-day a {
+            display: block;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #c9a86a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .event-day a:hover {
+            color: #f5f0e8;
+        }
+
+        @media (max-width: 700px) {
+            .calendar-month {
+                padding: 12px;
+            }
+
+            .day {
+                min-height: 60px;
+                padding: 6px;
+                font-size: 13px;
+            }
+
+            .event-day a {
+                font-size: 10px;
+            }
+
+            .day-name {
+                font-size: 12px;
+                padding: 5px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🎟️ PartyPass</h1>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/events">Events</a>
+        <a href="/calendar">Calendar</a>
+    </nav>
+</header>
+
+<main>
+
+    <h2>📅 Event Calendar</h2>
+    <p>View all upcoming PartyPass events by date.</p>
+
+    <div class="calendar-container">
+
+        <!-- SEPTEMBER 2026 -->
+
+        <div class="calendar-month">
+
+            <h3 class="month-title">September 2026</h3>
+
+            <div class="calendar-grid">
+
+                <div class="day-name">Sun</div>
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+
+                <div class="day event-day">
+                    12
+                    <a href="/event/summer-party">Summer Party</a>
+                </div>
+
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">18</div>
+
+                <div class="day event-day">
+                    19
+                    <a href="/event/beach-party">Beach Party</a>
+                </div>
+
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+
+            </div>
+        </div>
+
+
+        <!-- OCTOBER 2026 -->
+
+        <div class="calendar-month">
+
+            <h3 class="month-title">October 2026</h3>
+
+            <div class="calendar-grid">
+
+                <div class="day-name">Sun</div>
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+
+                <div class="day">1</div>
+                <div class="day">2</div>
+
+                <div class="day event-day">
+                    3
+                    <a href="/event/dj-night">DJ Night</a>
+                </div>
+
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day">10</div>
+
+                <div class="day">11</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+
+                <div class="day">18</div>
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+
+                <div class="day event-day">
+                    31
+                    <a href="/event/halloween-night">Halloween Night</a>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- NOVEMBER 2026 -->
+
+        <div class="calendar-month">
+
+            <h3 class="month-title">November 2026</h3>
+
+            <div class="calendar-grid">
+
+                <div class="day-name">Sun</div>
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">18</div>
+
+                <div class="day event-day">
+                    19
+                    <a href="/event/joana-party">🎂 Joana's Party</a>
+                </div>
+
+                <div class="day">20</div>
+
+                <div class="day event-day">
+                    21
+                    <a href="/event/winter-party">❄️ Winter Party</a>
+                </div>
+
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+
+                <div class="day">29</div>
+                <div class="day">30</div>
+
+            </div>
+        </div>
+
+
+        <!-- DECEMBER 2026 -->
+
+        <div class="calendar-month">
+
+            <h3 class="month-title">December 2026</h3>
+
+            <div class="calendar-grid">
+
+                <div class="day-name">Sun</div>
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+
+                <div class="day"></div>
+                <div class="day"></div>
+
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+                <div class="day">12</div>
+
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">18</div>
+                <div class="day">19</div>
+
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+
+                <div class="day event-day">
+                    31
+                    <a href="/event/new-years-party">New Year's Party</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>

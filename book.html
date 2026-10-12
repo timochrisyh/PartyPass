@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - PartyPass</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🎟️ PartyPass</h1>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/events">Events</a>
+            <a href="/calendar">Calendar</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Book Your Tickets</h2>
+
+        <form action="/confirmation" method="GET">
+            <input type="hidden" name="event" value="{{ event_name }}">
+
+            <p>
+                <label for="name">Your Name:</label><br>
+                <input type="text" id="name" name="name" required>
+            </p>
+
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="tickets">Number of Tickets:</label><br>
+                <select id="tickets" name="tickets">
+                    <option value="1">1 Ticket</option>
+                    <option value="2">2 Tickets</option>
+                    <option value="3">3 Tickets</option>
+                    <option value="4">4 Tickets</option>
+                    <option value="5">5 Tickets</option>
+                </select>
+            </p>
+
+            <p>
+                <strong>Price: €15 per ticket</strong>
+            </p>
+
+            <button type="submit">Confirm Booking</button>
+
+        </form>
+
+        <br>
+
+        <a href="/event">← Back to Event</a>
+
+    </main>
+
+</body>
+</html>
